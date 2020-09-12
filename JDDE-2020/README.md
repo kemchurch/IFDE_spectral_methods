@@ -6,5 +6,5 @@ Contents:
 - zip file monodromy_2020.zip : convenient download folder containing all necessary MATLAB function files needed to complete computer-assisted proofs from the paper or monodromy operator discretization.
 
 Current development:
-- optimize by using multidimensional arrays for inputs (ans subsequent processing) rather than cell arrays
+- optimize by using multidimensional arrays for inputs (and subsequent processing) rather than cell arrays
 - vectorize some loops
