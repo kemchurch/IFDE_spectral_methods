@@ -1,4 +1,4 @@
-function [M,E,W]=M_truncation(A,B,C1,C2,p,q,N2)
+function M=M_truncation(A,B,C1,C2,p,q,N2)
 if size(C1)~=size(C2)
     error('Mismatch: size of C1 and C2')
 end
