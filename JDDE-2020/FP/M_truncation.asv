@@ -8,13 +8,11 @@ function M=M_truncation(A,B,C1,C2,p,q,N2)
 % x'=A(t)*x(t) + B(t)*x(t-q), t/=/pk
 % Delta(x) = C1*x(t-) + C2*x(t-q), t=pk
 % for integers k. The delay (q) and period (p) must be positive integers.
-% C1 and C2 are real 2-dimensional arrays of dimension n. If A(t) is a 
+% C1 and C2 are real matrices of a specified dimension n. If A(t) is a 
 % constant matrix, A can be input as such. Otherwise, it must 
 % be input as a cell array A=cell{N1,p} such that A{m,n} is the m'th matrix 
-% Chebyshev coefficient of the function t->A_n(t)=A((t-1)/2 + n). That is, 
-% A*(t)=A{1,n} + 2*sum_{m>1} A{m,n}T_m(t) for T_m the m'th Chebyshev
-% polynomial of the first kind. The input B is similar. The order of the
-% method is N2, a positive integer.
+% Chebyshev coefficient of the function t->A*(t)=A((t-1)/2 + n), in the
+% sense that A*(t)=A{
 
 if size(C1)~=size(C2)
     error('Mismatch: size of C1 and C2')
