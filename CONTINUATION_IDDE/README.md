@@ -1,5 +1,7 @@
 Codes to accompany "Rigorous continuation of periodic solutions for impulsive delay differential equations".
 
+An INTLAB license is required to run most of the function files.
+
 Copyright 2020 Kevin E. M. Church and Gabriel W. Duchesne
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
