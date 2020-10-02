@@ -1,0 +1,30 @@
+Transforming data and computing the branch near beta^star.
+Branch computed.
+Quasi-amplitude crosses through zero along the numerical branch. To be verified later via interval methods.
+Attempting to validate the branch.
+Transforming data and computing the branch near beta^star.
+Branch computed.
+Quasi-amplitude crosses through zero along the numerical branch. To be verified later via interval methods.
+Attempting to validate the branch.
+Transforming data and computing the branch near beta^star.
+Branch computed.
+Quasi-amplitude crosses through zero along the numerical branch. To be verified later via interval methods.
+Attempting to validate the branch.
+Transforming data and computing the branch near beta^star.
+Branch computed.
+Quasi-amplitude crosses through zero along the numerical branch. To be verified later via interval methods.
+Attempting to validate the branch.
+<a href="matlab: opentoline('C:\Users\churc\Sync\impulsive wright equation\Code\Final_code\Near_trivial\script_compute_validate_desingularized_function.m',63,1)">63  </a>if eps_cont(pts)+R_MAT_cont(2,pts-1)>=0 || eps_cont(1)-R_MAT_cont(2,1) <= 0
+eps_cont(pts)
+ans =
+  -0.002821726380251
+R_MAT_cont(2,pts-1)
+ans =
+   0.003293163127260
+if system_dependent('IsDebugMode')==1, dbquit; end
+script_compute_validate_desingularized_function(A,N,alpha,B,u2,delta,Q,nu,Y0_MAT,Z0_MAT,Z1_MAT,Z2_MAT,R_MAT,r,T,tau,delta_s_near);
+Transforming data and computing the branch near beta^star.
+Branch computed.
+Quasi-amplitude crosses through zero along the numerical branch. To be verified later via interval methods.
+Attempting to validate the branch.
+Can not prove that quasi-amplitude crossed through zero. Try moving further away from the bifurcation.
