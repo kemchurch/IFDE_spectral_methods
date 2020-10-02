@@ -56,12 +56,12 @@ end
 
 % The matrix computations
 if p<q
-    M=M_truncation_pLq(A,B,C1,C2,p,q,N2);
+    [M,~,~]=M_truncation_pLq(A,B,C1,C2,p,q,N2);
 end
 
 if p==q
     if p==1
-        M=M_truncation_pLq(A,B,C1,C2,p,q,N2);
+        [M,~,~]=M_truncation_pLq(A,B,C1,C2,p,q,N2);
     else
         M=eye(d*(q*(N2+1) + 1));
         for k=1:p-1
