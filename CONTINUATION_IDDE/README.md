@@ -2,6 +2,10 @@ Codes to accompany "Rigorous continuation of periodic solutions for impulsive de
 
 An INTLAB license is required to run most of the function files.
 
+Contents:
+- CONTINUATION_IDDE.zip : All codes with appropriate directory structure, for ease of use by interested parties. This is probably what you want to download.
+- Individual codes : For review within GitHub.
+
 Copyright 2020 Kevin E. M. Church and Gabriel W. Duchesne
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
