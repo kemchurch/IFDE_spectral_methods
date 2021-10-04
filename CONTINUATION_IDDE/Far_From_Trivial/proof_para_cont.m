@@ -22,27 +22,40 @@ for i = 1:length(B)-1
     Z1_MAT(:,i) = Z1;
     Z2_MAT(:,i) = Z2;
     R_MAT(:,i) = R;
-    subplot(1,2,1);
-    plot(B(i:i+1),abs(A(1,i:i+1)),'g.-');hold on;
+    subplot(1,3,1);
+    plot(B(i:i+1),abs(A(1,i:i+1)),'g.-');
+    hold on;
     title('Away from \beta^*')
     xlabel('\beta');
     ylabel('|a_0|');
     set(gca,'Color','k')
     xlim([exp(-r*T) 1])
     ylim([0 1])
-    subplot(1,2,2);
+    set(gca,'FontSize',12)
+    subplot(1,3,2);
     set(gca,'Color','k')
     title('Near \beta^*')
     xlabel('\beta');
-    ylabel('|a_0|');
+    ylabel('\epsilon');
+    set(gca,'FontSize',12)
     drawnow
-    
+    subplot(1,3,3);
+    plot(B(i:i+1),A(1,i:i+1) + 2*sum(A(2:N+1,i:i+1),1),'g.-');
+    xlim([exp(-r*T) 1]);
+    ylim([0,A(1,1) + 2*sum(A(2:N+1,1),1)]);
+    set(gca,'Color','k')
+    hold on
+    title('Global branch')
+    xlabel('\beta');
+    ylabel('y(0)');
+    set(gca,'FontSize',12)
+    drawnow
 end
 if k == 0
     error("The branch fail to compute")
 else
-    A = A(:,1:k);
-    B = B(:,1:k);
+    A = A(:,1:k+1);
+    B = B(:,1:k+1);
 end
 % Proven Solution
 save('Data\data_h0_2_h1_proven','A','B','Y0_MAT','Z0_MAT','Y0_hat_MAT','Z0_hat_MAT','Z1_MAT','Z2_MAT','R_MAT','N','Q','u2','delta','alpha','r','tau','T','nu')

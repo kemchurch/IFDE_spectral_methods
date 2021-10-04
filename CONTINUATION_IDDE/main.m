@@ -36,7 +36,7 @@ disp('Proving branches away from beta^star.')
 proof_para_cont(A,N,alpha,B,u2,delta,Q,nu,r,T,tau)
 load('Data\data_h0_2_h1_proven.mat');
 disp('For branches aways from \beta^star ')
-disp(['Smallest existence interval: ', num2str(max(R_MAT(1,:)))])
+disp(['Smallest (uniform, over branch) existence radius: ', num2str(max(R_MAT(1,:)))])
 rmpath('.\Far_From_Trivial')
 %Computation Away from beta^star
 addpath('.\Near_Trivial')

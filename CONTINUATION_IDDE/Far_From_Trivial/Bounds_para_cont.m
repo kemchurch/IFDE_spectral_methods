@@ -1,5 +1,3 @@
-
-
 function [Y0,Y0_hat,Z0,Z0_hat,Z1,Z2,R] = Bounds_para_cont(a_0_not_int,a_1_not_int,beta_0_not_int,beta_1_not_int,a_0,a_s,N,alpha,beta_0,beta_s,u2,delta,Q,nu)
 
 A_N = intval(inv(Derivative_DF(a_0_not_int,N,alpha,beta_0_not_int,u2,delta,Q)));
@@ -9,6 +7,7 @@ nu = intval(nu);
 
 a_0_ext = [reshape(a_0,N+1,Q+1);zeros(N+1,Q+1)];
 norm_a_0 = norm_1_nu(reshape(a_0,N+1,Q+1),nu);
+norm_a_0_minus_e0 = norm_1_nu(reshape(a_0,N+1,Q+1) - [1;zeros(N,1)],nu);
 a_s_ext = [reshape(a_s,N+1,Q+1);zeros(N+1,Q+1)];
 % Convolution
 a_0_convo = intval(zeros(size(a_0_ext)));
@@ -90,7 +89,7 @@ Z1_body = intval(zeros(Q+1));
 Z1_tails = intval(zeros(Q+1));
 
 for i = 0:Q
-    Z1_tails(i+1,i+1) = alpha/2/u2*(nu+1/nu)/(2*(intval(N)+1))*(norm_a_0(i+1)+norm_a_0(mod(i+delta,Q+1)+1)+1);
+    Z1_tails(i+1,i+1) = alpha/2/u2*(nu+1/nu)/(2*(intval(N)+1))*(norm_a_0(i+1)+norm_a_0_minus_e0(mod(i+delta,Q+1)+1));
     for j=0:Q
         Z1_head(i+1,j+1) = 2*norm_1_nu(A_N(i*(N+1)+1:(i+1)*(N+1),j*(N+1)+1),nu)/nu^(N+1);
         Z1_body(i+1,j+1) = alpha/2/u2*norm_1_nu(abs(A_N(i*(N+1)+1:(i+1)*(N+1),j*(N+1)+1:(j+1)*(N+1)))*(Txi(:,i+1)+Txi(:,mod(i+delta,Q+1)+1)),nu);
@@ -104,6 +103,9 @@ norm_DPsi = intval(zeros(Q+1));
 z_1_2 = intval(zeros(1,Q+1));
 for i = 0:Q
     z_1_2(i+1) = norm_delta_a(i+1)+norm_delta_a(mod(i+delta,Q+1)+1);
+    if i == Q
+        z_1_2(i+1) = z_1_2(i+1) + abs(delta_beta);
+    end
     for j=0:Q
         if i==j
             norm_A(i+1,j+1) = max([norm_nu_N(A_N(i*(N+1)+1:(i+1)*(N+1),j*(N+1)+1:(j+1)*(N+1)),nu,N),1/(2*(intval(N)))]);

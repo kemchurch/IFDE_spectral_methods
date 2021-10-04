@@ -34,8 +34,8 @@ while beta-delta_s > exp(-r*T)
 end
 h = beta-1;
 % Proven Solution
-save('Data\h0_2_h1_discrete_solution_unproven','A','B','N','Q','u2','delta','alpha','r','tau','T','h','nu')
+save('Data\h0_2_h1_discrete_solution_unproven','A','B','h')
 % Begining of next step
-save('Data\data_h1','a','N','Q','u2','delta','alpha','beta','r','tau','T','h')
+save('Data\data_h1','a','N','beta','r','h')
 end
 

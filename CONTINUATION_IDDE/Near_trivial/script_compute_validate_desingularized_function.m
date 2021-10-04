@@ -32,13 +32,19 @@ for n=1:pts-1
         diary myDiaryFile
         %disp(['Success at branch segment n = ',num2str(n)])
         diary off
-        subplot(1,2,2);
-        plot(beta_cont(n:n+1),abs(a_cont(1,n:n+1)),'b.-');hold on;
+        subplot(1,3,2);
+        set(gca,'Color','k')
+        title('Near \beta^*')
         xlabel('\beta');
-        ylabel('|a_0|');
+        ylabel('\epsilon');
+        set(gca,'FontSize',12)
+        plot(beta_cont(n:n+1),eps_cont(n:n+1),'b.-');
+        hold on;
         set(gca,'Color','k')
         xlim([beta_cont(1,end),beta_cont(1,1)])
-        ylim([abs(a_cont(1,end)),abs(a_cont(1,1))])
+        ylim([eps_cont(end),(eps_cont(1))])
+        subplot(1,3,3)
+        plot(beta_cont(n:n+1),eps_cont(n:n+1).*(a_cont(1,n:n+1) + 2*sum(a_cont(2:N+1,n:n+1),1)),'b.-');
         drawnow
     else
         disp(['Failure at branch segment n = ',num2str(n)])
