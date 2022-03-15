@@ -5,7 +5,7 @@
 % for A(t)=
 % [1,0;0,1] for t\in[0,1]
 % [-1,0;-1,0] for t\in[1,2]
-% [0,1;11,0] for t\in[2,3]
+% [0,1;1,0] for t\in[2,3]
 % and extended periodically, while B(t)=[-1,0;0,-1],
 % C1=[-0.5,0;0,0], C2=[-0.2,0;0.2,-0.3];
 % Note the period (p) is 3.
